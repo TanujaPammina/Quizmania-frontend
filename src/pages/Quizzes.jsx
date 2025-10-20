@@ -24,7 +24,7 @@ const Quizzes = () => {
   const fetchQuizzes = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/quizzes', {
+      const res = await axios.get('https://quizmania-backend.vercel.app/api/quizzes', {
         params: { search, category, difficulty },
       });
       setQuizzes(res.data);

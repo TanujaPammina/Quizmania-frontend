@@ -14,7 +14,7 @@ const Leaderboard = () => {
   const fetchLeaderboard = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/leaderboard');
+      const res = await axios.get('https://quizmania-backend.vercel.app/api/leaderboard');
       setLeaders(res.data);
     } catch (err) {
       toast.error('Failed to load leaderboard');

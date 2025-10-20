@@ -56,7 +56,7 @@ const CreateQuiz = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/quizzes', quiz, {
+      await axios.post('https://quizmania-backend.vercel.app/api/quizzes', quiz, {
         headers: { 'x-auth-token': token },
       });
       toast.success('Quiz created successfully!');

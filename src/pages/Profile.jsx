@@ -23,7 +23,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No token found');
-      const res = await axios.get('http://localhost:5000/api/scores', {
+      const res = await axios.get('https://quizmania-backend.vercel.app/api/scores', {
         headers: { 'x-auth-token': token },
       });
       setScores(res.data);

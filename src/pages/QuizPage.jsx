@@ -33,7 +33,7 @@ const QuizPage = () => {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.get(`http://localhost:5000/api/quizzes/${quizId}`, {
+      const res = await axios.get(`https://quizmania-backend.vercel.app/api/quizzes/${quizId}`, {
         headers: { 'x-auth-token': token },
       });
       console.log('Quiz Data:', res.data);
@@ -81,7 +81,7 @@ const QuizPage = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post('http://localhost:5000/api/scores', {
+      await axios.post('https://quizmania-backend.vercel.app/api/scores', {
         quizId,
         score: calculatedScore,
         totalQuestions: quiz.questions.length,
